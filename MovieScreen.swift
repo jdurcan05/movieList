@@ -8,22 +8,22 @@
 import UIKit
 
 class MovieScreen: UIViewController {
-
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var textFieldDescription: UITextView!
+    var newTitle: String = ""
+    var newDescription = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        titleLabel.text = newTitle
+        textFieldDescription.text = newDescription
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        print("Red Dissapear")
+        newDescription = textFieldDescription.text
+        performSegue(withIdentifier: "unwind", sender: self)
+        
     }
-    */
 
 }

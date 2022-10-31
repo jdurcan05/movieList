@@ -7,9 +7,9 @@
 
 import Foundation
 
-class MovieClass{
+class MovieClass: Codable{
     
-    
+    var description = "Type description here"
    var title = ""
     var year = 0
     var rating = 0
